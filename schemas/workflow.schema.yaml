@@ -1,0 +1,23 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Shot Execution Workflow
+type: object
+required: [id, task_ref, trigger, steps, output, rollback]
+properties:
+  id: {type: string}
+  task_ref: {type: string}
+  trigger: {type: string}
+  steps:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required: [id, actor, action, tool, on_failure]
+      properties:
+        id: {type: string}
+        actor: {type: string}
+        action: {type: string}
+        tool: {type: string}
+        permission: {type: string}
+        on_failure: {enum: [retry, repair, escalate, stop, rollback]}
+  output: {type: string}
+  rollback: {type: string}

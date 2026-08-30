@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "若本方法論對你的教學、研究或企業導入有幫助，請引用本專案。"
+title: "Enterprise AI Golfer: Experience-Driven Decision & Capability Framework"
+type: software
+version: 0.1.0
+date-released: 2026-08-30
+authors:
+  - family-names: "陳"
+    given-names: "俊宏"
+    alias: "AI Coach 益力康陳董"
+license: CC-BY-4.0
+abstract: "以高爾夫球場管理為共同語言，整合 AI to Agent、VAD、VAC、Memory、Workflow、Decision、Verify 與 Brand 的企業 AI 導入方法論。"

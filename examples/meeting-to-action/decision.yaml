@@ -1,0 +1,19 @@
+id: decision-meeting-001
+task_ref: vad-meeting-001
+risk_level: R2
+strategy: play_safe
+rationale:
+  - 摘要與整理可自動完成，但人員指派與對外寄送影響較高
+  - 所有 Owner 必須與專案成員表一致
+authorization:
+  mode: approve_before
+  approver: 會議主持人
+routing_policy:
+  club_class: iron
+  quality_floor: 0.95
+  cost_ceiling: 1.0
+  fallback: 若人名或期限不確定，標記待確認而不是猜測
+stop_conditions:
+  - 找不到逐字稿或專案成員表
+  - 內容包含未授權的敏感個資
+  - 寫入工具回傳權限錯誤

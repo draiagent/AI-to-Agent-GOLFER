@@ -1,0 +1,30 @@
+id: workflow-supplier-001
+task_ref: vad-supplier-001
+trigger: 供應商延遲超過 10 天且漲價超過 10%
+steps:
+  - id: step-1
+    actor: Supply Data Agent
+    action: 讀取交期、庫存、需求與合格供應商資料
+    tool: ERP/MRP 唯讀接口
+    permission: read-only
+    on_failure: stop
+  - id: step-2
+    actor: Risk Agent
+    action: 計算停線日、成本曝險與資料缺口
+    tool: 計算引擎
+    permission: sandbox
+    on_failure: repair
+  - id: step-3
+    actor: Strategy Agent
+    action: 產出保守、平衡與進攻三方案
+    tool: 高階推理模型
+    permission: advisory-only
+    on_failure: escalate
+  - id: step-4
+    actor: Human Decision Board
+    action: 核對數字、詢價與決定處置
+    tool: 決策審核表
+    permission: approve
+    on_failure: stop
+output: 含數據來源、假設、風險與待決事項的三方案決策包
+rollback: 不執行任何外部採購動作，保留分析紀錄供人工重算

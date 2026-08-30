@@ -1,0 +1,25 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: AI Golfer Decision Record
+type: object
+required: [id, task_ref, risk_level, strategy, rationale, authorization, routing_policy, stop_conditions]
+properties:
+  id: {type: string}
+  task_ref: {type: string}
+  risk_level: {enum: [R0, R1, R2, R3, R4]}
+  strategy: {enum: [attack, play_safe, escalate_model, ask_or_retrieve, human_approval, stop]}
+  rationale: {type: array, minItems: 1, items: {type: string}}
+  authorization:
+    type: object
+    required: [mode, approver]
+    properties:
+      mode: {enum: [autonomous, review_after, approve_before, advisory_only, prohibited]}
+      approver: {type: string}
+  routing_policy:
+    type: object
+    required: [club_class, quality_floor, cost_ceiling]
+    properties:
+      club_class: {enum: [putter, wedge, iron, hybrid, fairway_wood, driver]}
+      quality_floor: {type: number, minimum: 0, maximum: 1}
+      cost_ceiling: {type: number, minimum: 0}
+      fallback: {type: string}
+  stop_conditions: {type: array, minItems: 1, items: {type: string}}

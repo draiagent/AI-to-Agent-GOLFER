@@ -1,0 +1,26 @@
+id: verify-meeting-001
+task_ref: vad-meeting-001
+checks:
+  - dimension: correctness
+    criterion: Owner 與成員表一致，日期換算正確
+    result: pass
+    evidence: 主持人核准紀錄 #A-20260830
+  - dimension: completeness
+    criterion: 每項 Action Item 有動詞、Owner、Deadline、來源
+    result: pass
+    evidence: 12 項行動項目皆含四欄
+  - dimension: evidence
+    criterion: 每個決策可回到逐字稿段落
+    result: pass
+    evidence: 5 個決策皆附時間戳
+  - dimension: risk
+    criterion: 未經核准不得寄送或正式寫入
+    result: pass
+    evidence: 核准前僅建立草稿
+  - dimension: brand
+    criterion: 語氣清楚、尊重、不誇大決策共識
+    result: pass
+    evidence: 品牌檢查清單通過
+outcome: approved
+score: 96
+reviewer: 會議主持人

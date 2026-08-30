@@ -1,0 +1,21 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Verify Scorecard
+type: object
+required: [id, task_ref, checks, outcome, score]
+properties:
+  id: {type: string}
+  task_ref: {type: string}
+  checks:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required: [dimension, criterion, result, evidence]
+      properties:
+        dimension: {enum: [correctness, completeness, evidence, risk, brand, cost, latency, business_kpi]}
+        criterion: {type: string}
+        result: {enum: [pass, fail, needs_review]}
+        evidence: {type: string}
+  outcome: {enum: [approved, repair, rejected, human_review]}
+  score: {type: number, minimum: 0, maximum: 100}
+  reviewer: {type: string}

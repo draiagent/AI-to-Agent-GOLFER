@@ -1,0 +1,34 @@
+id: vad-supplier-001
+title: 供應商延遲與漲價處置球場圖
+goal:
+  business_outcome: 在不影響關鍵產線的前提下提出三種可核准處置方案
+  metric: 24 小時內完成，所有數字可追溯，未授權採購行動 = 0
+stakeholders:
+  - 採購主管
+  - 生產主管
+  - 財務主管
+  - 品質主管
+inputs:
+  - name: 供應商交期與報價
+    source: ERP 與核准報價單
+    required: true
+  - name: 庫存與生產需求
+    source: ERP/MRP
+    required: true
+  - name: 合格供應商清單
+    source: 採購與品質系統
+    required: true
+constraints:
+  - AI 不得自行下單、簽約或承諾價格
+  - 替代供應商必須通過品質資格
+risks:
+  - risk: 錯估庫存造成停線
+    level: R3
+    mitigation: ERP 與生產主管雙重核對
+  - risk: 未授權更換供應商
+    level: R4
+    mitigation: 所有外部行動由採購主管核准
+acceptance_criteria:
+  - 三個方案含成本、交期、品質與風險
+  - 所有數字標示資料來源與更新時間
+  - 明確列出建議、假設與待主管決定事項

@@ -1,0 +1,22 @@
+id: brand-supplier-001
+brand_line: AI Coach 益力康陳董 | 2026 AI to Agent
+audience:
+  - 製造業高階主管
+  - 採購與供應鏈團隊
+positioning: 懂製造現場、成本與風險的企業 AI 決策教練
+voice:
+  - 專業
+  - 務實
+  - 數據導向
+  - 不誇大
+required_elements:
+  - 清楚分開事實、假設、建議與決策
+  - 標示資料來源與更新時間
+  - 保留主管最終決策權
+prohibited_claims:
+  - 不得宣稱 AI 可保證零停線或零風險
+  - 不得把未正式詢價數字當作確定報價
+verification:
+  - 檢查數字與來源
+  - 檢查權限與待決事項
+  - 檢查固定署名與品牌語氣

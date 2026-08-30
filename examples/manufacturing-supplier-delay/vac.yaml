@@ -1,0 +1,23 @@
+id: vac-supplier-exception-analysis
+title: 供應商延遲與漲價決策準備能力包
+version: 0.1.0
+owner: 採購與供應鏈管理部
+trigger: 交期延遲超過 10 天或價格上升超過 10%
+applicability:
+  use_when:
+    - ERP/MRP 與合格供應商資料可取得
+    - 由 AI 準備方案、主管保留最終決策
+  do_not_use_when:
+    - 任務要求自動下單或簽約
+    - 關鍵原料涉及未建模的法規或品質變更
+inputs:
+  - ERP 庫存與需求
+  - 供應商交期與價格
+  - 合格供應商清單
+decision_rule: 只產出可追溯方案；所有外部承諾、供應商更換與採購動作由授權主管決定
+workflow_ref: workflow-supplier-001
+verify_ref: verify-supplier-001
+brand_ref: brand-supplier-001
+expires_at: "2026-12-31"
+change_log:
+  - 0.1.0 初始試行版，尚未包含自動詢價

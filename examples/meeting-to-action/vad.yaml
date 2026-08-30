@@ -1,0 +1,30 @@
+id: vad-meeting-001
+title: 會議到行動任務球場圖
+goal:
+  business_outcome: 會後 30 分鐘內產出可核准的行動紀錄
+  metric: 行動項目完整率 >= 95%，錯誤指派率 = 0
+stakeholders:
+  - 會議主持人
+  - 專案經理
+  - 行動項目負責人
+inputs:
+  - name: 會議逐字稿
+    source: 核准的會議錄音轉錄
+    required: true
+  - name: 專案成員表
+    source: 專案系統
+    required: true
+  - name: 既有任務
+    source: 專案系統
+    required: false
+constraints:
+  - 不得把未確認討論誤標為正式決策
+  - 寄送郵件前必須人工核准
+risks:
+  - risk: 指派錯誤的 Owner 或 Deadline
+    level: R2
+    mitigation: 與專案成員表核對並由主持人核准
+acceptance_criteria:
+  - 每項 Action Item 都有動詞、Owner、Deadline 與來源段落
+  - Decisions 與 Discussion 明確分離
+  - 寫入及郵件草稿都有可追溯紀錄

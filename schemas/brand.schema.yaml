@@ -1,0 +1,13 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: Brand Guardrail
+type: object
+required: [id, brand_line, audience, positioning, voice, required_elements, prohibited_claims, verification]
+properties:
+  id: {type: string}
+  brand_line: {type: string}
+  audience: {type: array, minItems: 1, items: {type: string}}
+  positioning: {type: string}
+  voice: {type: array, minItems: 1, items: {type: string}}
+  required_elements: {type: array, items: {type: string}}
+  prohibited_claims: {type: array, items: {type: string}}
+  verification: {type: array, minItems: 1, items: {type: string}}

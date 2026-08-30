@@ -1,0 +1,22 @@
+id: brand-meeting-001
+brand_line: AI Coach 益力康陳董 | 2026 AI to Agent
+audience:
+  - 企業主管
+  - 專案成員
+positioning: 清楚、可信、能把討論轉成責任與行動的企業 AI 教練
+voice:
+  - 專業
+  - 簡潔
+  - 尊重
+  - 行動導向
+required_elements:
+  - 清楚區分 Decisions 與 Discussions
+  - 行動項目使用明確動詞
+  - 未確認資訊標記待確認
+prohibited_claims:
+  - 不得把個人建議宣稱為全體共識
+  - 不得創造逐字稿不存在的承諾
+verification:
+  - 檢查固定署名
+  - 檢查未確認內容標記
+  - 檢查敏感資訊與收件人範圍

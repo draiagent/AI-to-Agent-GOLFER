@@ -1,0 +1,19 @@
+id: memory-meeting-001
+task_ref: vad-meeting-001
+sources:
+  - source_id: transcript-20260830
+    title: 2026-08-30 專案會議逐字稿
+    updated_at: "2026-08-30"
+    trust: high
+    access: restricted
+  - source_id: project-roster-v3
+    title: 專案成員與角色表 v3
+    updated_at: "2026-08-25"
+    trust: authoritative
+    access: internal
+facts:
+  - statement: 專案經理是本次行動項目的核准人
+    source_id: project-roster-v3
+    valid_until: "2026-12-31"
+knowledge_gaps:
+  - 逐字稿中「下週五」需依會議日期換算並由主持人確認

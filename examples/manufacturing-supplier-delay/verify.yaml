@@ -1,0 +1,22 @@
+id: verify-supplier-001
+task_ref: vad-supplier-001
+checks:
+  - dimension: correctness
+    criterion: 庫存、需求、交期與成本計算可重算
+    result: pass
+    evidence: 財務與生產主管重算結果一致
+  - dimension: evidence
+    criterion: 每個數字附來源與快照日期
+    result: pass
+    evidence: 決策包資料表完整
+  - dimension: risk
+    criterion: 未發生未授權下單、簽約或外部承諾
+    result: pass
+    evidence: 工具權限均為唯讀或 advisory-only
+  - dimension: business_kpi
+    criterion: 方案可在安全庫存耗盡前執行
+    result: needs_review
+    evidence: 替代供應商交期仍待正式詢價
+outcome: human_review
+score: 88
+reviewer: 採購主管與生產主管

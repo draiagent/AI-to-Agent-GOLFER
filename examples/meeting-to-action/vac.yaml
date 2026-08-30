@@ -1,0 +1,23 @@
+id: vac-meeting-to-action
+title: 會議到行動能力包
+version: 0.1.0
+owner: 專案管理辦公室
+trigger: 核准逐字稿與專案成員表均可讀取
+applicability:
+  use_when:
+    - 內部專案會議且主持人可核准
+    - 逐字稿品質可辨識人員與決策
+  do_not_use_when:
+    - 涉及董事會機密但未配置適當權限
+    - 逐字稿缺失或講者無法辨識
+inputs:
+  - 會議逐字稿
+  - 專案成員表
+  - 既有任務清單
+decision_rule: 不確定的 Owner、Deadline 或決策一律標記待確認，不得自動猜測
+workflow_ref: workflow-meeting-001
+verify_ref: verify-meeting-001
+brand_ref: brand-meeting-001
+expires_at: "2027-02-28"
+change_log:
+  - 0.1.0 初始試行版，保留主持人事前核准

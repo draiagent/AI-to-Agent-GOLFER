@@ -1,0 +1,32 @@
+name: 產業案例
+description: 分享去識別化的 Enterprise Shot 或 VAC 案例
+title: "[Case] "
+labels: [case-study]
+body:
+  - type: input
+    id: industry
+    attributes:
+      label: 產業／部門
+    validations:
+      required: true
+  - type: textarea
+    id: golfer
+    attributes:
+      label: GOLFER 閉環
+      description: 請依 Goal、Observe、Learn、Form、Execute、Review、Retain 說明。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Baseline 與結果
+      description: 請說明測量方法、樣本與限制。
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 資料與授權
+      options:
+        - label: 案例已去識別化且取得必要授權
+          required: true
+        - label: 未將單次成功宣稱為普遍結果
+          required: true

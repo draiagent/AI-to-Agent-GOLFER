@@ -1,0 +1,19 @@
+id: memory-supplier-001
+task_ref: vad-supplier-001
+sources:
+  - source_id: erp-snapshot-20260830
+    title: ERP 庫存與交期快照
+    updated_at: "2026-08-30"
+    trust: authoritative
+    access: restricted
+  - source_id: approved-vendors-2026q3
+    title: 2026 Q3 合格供應商清單
+    updated_at: "2026-07-01"
+    trust: authoritative
+    access: restricted
+facts:
+  - statement: 現有安全庫存可支應 12 個生產日
+    source_id: erp-snapshot-20260830
+    valid_until: "2026-08-31"
+knowledge_gaps:
+  - 替代供應商最快可交期需由採購詢價確認

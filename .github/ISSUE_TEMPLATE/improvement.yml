@@ -1,0 +1,31 @@
+name: 方法論改進
+description: 提出名詞、流程、規格、治理或教材改進
+title: "[Improvement] "
+labels: [methodology]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題
+      description: 目前內容在哪個情境下不清楚或不可用？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建議
+      description: 請說明具體改法與預期影響。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 證據或案例
+      description: 請去識別化，並區分觀察、推論與驗證結果。
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 確認
+      options:
+        - label: 我沒有提交個資、公司秘密或未授權素材
+          required: true

@@ -1,0 +1,19 @@
+id: decision-supplier-001
+task_ref: vad-supplier-001
+risk_level: R3
+strategy: human_approval
+rationale:
+  - 決策影響產線、成本、品質與供應商關係
+  - AI 適合完成跨資料分析，但不具採購承諾權
+authorization:
+  mode: advisory_only
+  approver: 採購主管與生產主管
+routing_policy:
+  club_class: fairway_wood
+  quality_floor: 0.98
+  cost_ceiling: 8.0
+  fallback: 資料衝突時停止計算並要求 ERP 資料負責人確認
+stop_conditions:
+  - 庫存、BOM 或需求數字來源不一致
+  - 替代供應商未列於合格清單
+  - 任務要求 AI 直接下單或承諾價格

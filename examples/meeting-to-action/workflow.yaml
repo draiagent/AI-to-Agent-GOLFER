@@ -1,0 +1,36 @@
+id: workflow-meeting-001
+task_ref: vad-meeting-001
+trigger: 會議主持人將核准逐字稿放入指定資料夾
+steps:
+  - id: step-1
+    actor: Transcript Agent
+    action: 讀取逐字稿並辨識專案
+    tool: 文件讀取器
+    permission: read-only
+    on_failure: stop
+  - id: step-2
+    actor: Meeting Agent
+    action: 分離摘要、決策、問題與行動項目
+    tool: 通用語言模型
+    permission: draft-only
+    on_failure: repair
+  - id: step-3
+    actor: Owner Resolver
+    action: 核對 Owner 與 Deadline
+    tool: 專案系統查詢接口
+    permission: read-only
+    on_failure: escalate
+  - id: step-4
+    actor: Human Approver
+    action: 核准內容與寫入
+    tool: 審核介面
+    permission: approve
+    on_failure: stop
+  - id: step-5
+    actor: Action Agent
+    action: 寫入任務並建立 follow-up 草稿
+    tool: 專案系統與郵件草稿接口
+    permission: write-draft
+    on_failure: rollback
+output: 已核准的會議紀錄、任務清單與未寄送郵件草稿
+rollback: 移除本次新增任務並保留稽核紀錄，不自動寄送郵件
